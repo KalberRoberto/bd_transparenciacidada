@@ -7,7 +7,8 @@ wget -O participante.txt.gz https://dados.tce.pb.gov.br/TCE-PB-SAGRES-Participan
 
 gunzip licitacao.txt.gz
 gunzip participante.txt.gz
-sed 's/"/ /g' licitacao.txt
+sed 's/"/ /g' licitacao.txt >> semaspas.txt
+mv semaspas.txt licitacao.txt
 mv licitacao.txt /storage/neo4j/import/
 mv participante.txt /storage/neo4j/import/
 
