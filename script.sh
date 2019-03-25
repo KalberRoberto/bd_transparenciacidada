@@ -12,3 +12,6 @@ mv semaspas.txt licitacao.txt
 mv licitacao.txt /storage/neo4j/import/
 mv participante.txt /storage/neo4j/import/
 
+cat carrega_participante.cypher | cypher-shell -u neo4j -p 123123 --format plain
+cat carrega_licitacao.cypher | cypher-shell -u neo4j -p 123123 --format plain
+cat relacionamentos.cypher | cypher-shell -u neo4j -p 123123 --format plain &
