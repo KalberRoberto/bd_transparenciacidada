@@ -1,1 +1,1 @@
-match (n:Participante) delete detach (n);
+match (n:Participante)  detach delete (n);
