@@ -8,7 +8,7 @@ MATCH (l:Licitacao {
         })
 MERGE (p:Participante{ChaveParticipante:line.nu_cpfcnpj})
 ON CREATE SET p.NomeParticipante = line.no_proponente
-CREATE (p)-[:FezPropostaEm{
+CREATE (p)-[:FEZ_PROPOSTA_EM{
         CodUnidadeGest: line.cd_ugestora,
         CodLicitacao: line.nu_licitacao,
         CodTipoLicitacao:line.tp_licitacao,
