@@ -1,4 +1,5 @@
 #!/bin/bash
+cat deleta_todos_nos.cypher | cypher-shell -u neo4j -p tcctcc --format plain
 rm /storage/neo4j/import/licitacao.txt
 rm /storage/neo4j/import/participante.txt
 
