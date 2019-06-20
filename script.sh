@@ -8,13 +8,11 @@ wget -O participante.txt.gz https://dados.tce.pb.gov.br/TCE-PB-SAGRES-Propostas_
 
 gunzip licitacao.txt.gz
 gunzip participante.txt.gz
-sed 's/"/ /g' licitacao.txt >> semaspas.txt
-mv semaspas.txt licitacao.txt
+sed -i 's/"/ /g' licitacao.txt 
+sed -i "s/\r//g" licitacao.txt
 mv licitacao.txt /storage/neo4j/import/
 mv participante.txt /storage/neo4j/import/
 
-cat cria_index_licitacao.cypher | cypher-shell -u neo4j -p tcctcc --format plain
-cat cria_index_participante.cypher | cypher-shell -u neo4j -p tcctcc --format plain
 cat carrega_unidade_gestora.cypher | cypher-shell -u neo4j -p tcctcc --format plain
 cat carrega_licitacao.cypher | cypher-shell -u neo4j -p tcctcc --format plain
 cat carrega_participante.cypher | cypher-shell -u neo4j -p tcctcc --format plain
